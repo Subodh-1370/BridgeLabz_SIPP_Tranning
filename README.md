@@ -7,7 +7,7 @@ Welcome to my Java learning journey as part of the BridgeLabz SIPP Training! Thi
 
 ## 📅 Daily Breakdown
 
-## JAVA FUNDAMENTALS -------<-
+## JAVA FUNDAMENTALS --<---<
 
 - **Day 1** – 🧠 `PracticeProblems`  
   Basic problem-solving exercises to get started with Java syntax and logic.
@@ -30,7 +30,7 @@ Welcome to my Java learning journey as part of the BridgeLabz SIPP Training! Thi
 - **Day 7** – 🧩 `Built-in_Function`  
   Using Java’s built-in classes and functions from standard libraries.
   
-## OOPS------<
+## OOPS --<---<
 
 - **Day 8** – 🧱 `ClassAndObject`  
   Starting with Object-Oriented Programming — classes and objects.

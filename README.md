@@ -38,6 +38,8 @@ Welcome to my Java learning journey as part of the BridgeLabz SIPP Training! Thi
 - **Day 9** – 🏗️ `JavaConstructor`  
   Worked on constructor and access modifier-based problems using real-life examples like Product, Course, Vehicle, Student, Book, Bank Account, and Employee.
 
+- **Day 10** – 🔒 This_Final_StaticKeyword
+  Explored this, final, and static keywords with examples in object management.
 
 ---
 

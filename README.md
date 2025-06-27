@@ -41,6 +41,9 @@ Welcome to my Java learning journey as part of the BridgeLabz SIPP Training! Thi
 - **Day 10** – 🔒 This_Final_StaticKeyword
   Explored this, final, and static keywords with examples in object management.
 
+- **Day 11** – 🧩 `ObjectModeling`
+  Modeled real-world systems using classes, objects & relationships.
+
 ---
 
 ## 🛠 Structure

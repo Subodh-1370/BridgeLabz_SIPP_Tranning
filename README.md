@@ -47,6 +47,9 @@ Welcome to my Java learning journey as part of the BridgeLabz SIPP Training! Thi
 - **Day 12** – 🧬 `Inheritance`  
   Practiced single, multilevel, hierarchical inheritance with real-world models like Library, Vehicle, and University.
 
+- **Day 13** – 🔗 `Encapsulation_Polymorphism_AbstractClass_Interface`  
+  Covered core OOP pillars – data hiding, polymorphic behavior, abstract design, and interface contracts.
+
 ---
 
 ## 🛠 Structure

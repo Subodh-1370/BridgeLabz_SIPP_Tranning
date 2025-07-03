@@ -278,6 +278,6 @@ public class DLL_MovieManagementSystem {
 
         } while (choice != 0);
 
-        sc.close();
+        sc.close();;
     }
 }

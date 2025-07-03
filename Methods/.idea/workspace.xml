@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="610cac50-aa26-4011-b746-9acf277d15b4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Mehtods/.idea/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mehtods/.idea/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mehtods/.idea/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mehtods/Q_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mehtods/Q_2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mehtods/Q_20.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mehtods/Q_21.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mehtods/Q_22.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mehtods/Q_23.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mehtods/Q_24.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mehtods/Q_25.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mehtods/Q_26.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mehtods/Q_27.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mehtods/Q_28.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mehtods/Q_29.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mehtods/Q_3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mehtods/Q_30.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mehtods/Q_4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mehtods/Q_5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mehtods/Q_6.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mehtods/Q_7.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mehtods/Q_8.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mehtods/Q_9.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2yjJgCJqIcuw6mfsT2byiI7hEQR" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "CoreJava",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/Pattern"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="610cac50-aa26-4011-b746-9acf277d15b4" name="Changes" comment="" />
+      <created>1750342157665</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1750342157665</updated>
+    </task>
+    <servers />
+  </component>
+</project>

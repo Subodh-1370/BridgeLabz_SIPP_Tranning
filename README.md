@@ -50,6 +50,18 @@ Welcome to my Java learning journey as part of the BridgeLabz SIPP Training! Thi
 - **Day 13** – 🔗 `Encapsulation_Polymorphism_AbstractClass_Interface`  
   Covered core OOP pillars – data hiding, polymorphic behavior, abstract design, and interface contracts.
 
+## >--->-- DSA WITH JAVA CONCEPTS --<---<
+
+- **Day 14** – 🔗 LinkedList
+ Implementation and application of singly and doubly linked lists.
+
+- **Day 15** – 📦 StackQueueHashMapHashFunction
+ Explored data structures like Stack, Queue, HashMap, and custom hash functions.
+
+- **Day 16** – 🔃 Sorting
+Implemented and analyzed sorting algorithms like Bubble, Selection, and Heap sort.
+
+
 ---
 
 ## 🛠 Structure

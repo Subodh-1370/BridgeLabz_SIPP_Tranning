@@ -1,4 +1,4 @@
-public class StringConcatPerformance {
+public class    StringConcatPerformance {
 
     public static void testConcatenation(int count) {
         long start, end;

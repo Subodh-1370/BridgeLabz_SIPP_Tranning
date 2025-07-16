@@ -61,6 +61,13 @@ Welcome to my Java learning journey as part of the BridgeLabz SIPP Training! Thi
 - **Day 16** – 🔃 Sorting
 Implemented and analyzed sorting algorithms like Bubble, Selection, and Heap sort.
 
+- **Day 17** – 🔎 `Linear_Binary_Search`  
+  Implemented Linear Search and Binary Search algorithms with performance comparison and input validation.
+
+- **Day 18** – 📈 `RuntimeAnalysis_BigONotations`  
+  Analyzed Java program performance using different input sizes. Explored Big-O notations, time/space trade-offs, and string concatenation vs. StringBuilder performance.
+
+## >--->-- WORKSHOP(RANDOM QUISTIONS) --<---<
 
 ---
 

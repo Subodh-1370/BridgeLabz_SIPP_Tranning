@@ -74,6 +74,8 @@ Implemented and analyzed sorting algorithms like Bubble, Selection, and Heap sor
 - **Day 20** - One Quistion - #StudentProject implementation using LinkedList.....
 
 - **Day 21** - Two Question - #ExpressionEvaluationEngine , #SkillForgeApp.....
+
+## >--->-- Generics&Collections --<---<
 ---
 
 ## 🛠 Structure

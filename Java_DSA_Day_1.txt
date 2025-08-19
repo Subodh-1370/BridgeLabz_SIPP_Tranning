@@ -1,0 +1,76 @@
+Q.1-----Undo feature in text Editor-----
+
+CLASS TextEditor
+    text = ""
+    undoStack = empty stack
+
+    METHOD type(word)
+        PUSH ("ADD", word) to undoStack
+        text = text + word
+
+    METHOD delete(n)
+        deleted = last n chars of text
+        PUSH ("DEL", deleted) to undoStack
+        text = text without last n chars
+
+    METHOD undo()
+        IF stack empty → PRINT "Nothing to undo"
+        ELSE
+            op = POP from stack
+            IF op is "ADD" → remove word from text
+            IF op is "DEL" → add deleted back to text
+
+    METHOD show()
+        PRINT text
+
+
+MAIN:
+    editor = TextEditor()
+    editor.type("Hello")
+    editor.type(" World")
+    editor.show()       // Hello World
+    editor.delete(5)
+    editor.show()       // Hello
+    editor.undo()
+    editor.show()       // Hello World
+
+---------------------------------------------------------------------------------------------------
+
+Q.2-----Call Center Queue Management-------
+
+CLASS CallCenter
+    emergencyQueue = empty queue
+    normalQueue = empty queue
+
+    METHOD addCustomer(name, type)
+        IF type == "EMERGENCY"
+            ENQUEUE name in emergencyQueue
+        ELSE
+            ENQUEUE name in normalQueue
+
+    METHOD serveCustomer()
+        IF emergencyQueue not empty
+            customer = DEQUEUE from emergencyQueue
+        ELSE IF normalQueue not empty
+            customer = DEQUEUE from normalQueue
+        ELSE
+            PRINT "No customers in queue"
+            RETURN
+        PRINT "Serving: " + customer
+
+    METHOD showQueues()
+        PRINT "Emergency Queue: " + emergencyQueue
+        PRINT "Normal Queue: " + normalQueue
+
+
+MAIN:
+    center = CallCenter()
+
+    center.addCustomer("Alice", "NORMAL")
+    center.addCustomer("Bob", "EMERGENCY")
+    center.addCustomer("Charlie", "NORMAL")
+
+    center.serveCustomer()   
+    center.serveCustomer()   
+    center.serveCustomer()   
+

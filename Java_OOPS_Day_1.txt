@@ -1,0 +1,59 @@
+Q.1----Pet Adoption App------
+
+CLASS Pet
+    ATTR name, age
+    CONSTRUCTOR(name, age)
+    METHOD displayInfo()
+
+CLASS Dog EXTENDS Pet
+    ATTR breed
+    CONSTRUCTOR(name, age, breed) → super(name, age)
+    METHOD displayInfo() → super + breed
+
+CLASS Cat EXTENDS Pet
+    ATTR color
+    CONSTRUCTOR(name, age, color) → super(name, age)
+    METHOD displayInfo() → super + color
+
+CLASS Bird EXTENDS Pet
+    ATTR canFly
+    CONSTRUCTOR(name, age, canFly) → super(name, age)
+    METHOD displayInfo() → super + canFly info
+
+MAIN:
+    dog = Dog("Buddy", 3, "Golden Retriever")
+    cat = Cat("Whiskers", 2, "White")
+    bird = Bird("Tweety", 1, TRUE)
+
+    dog.displayInfo()
+    cat.displayInfo()
+    bird.displayInfo()
+
+
+-------------------------------------------------------------------------------
+Q.2 -----Library Membership Tracker------
+
+CLASS Member
+    ATTRIBUTES: name, id, membershipDate, validityInYears
+
+    CONSTRUCTOR(name, id, membershipDate, validityInYears)
+        SET this.name = name
+        SET this.id = id
+        SET this.membershipDate = membershipDate
+        SET this.validityInYears = validityInYears
+
+    METHOD checkValidity(currentDate)
+        CALCULATE expiryDate = membershipDate + validityInYears
+        IF currentDate <= expiryDate
+            PRINT "Membership is VALID"
+        ELSE
+            PRINT "Membership EXPIRED"
+
+
+MAIN:
+    member1 = Member("Subodh", 101, "2023-08-01", 2)
+
+    CALL member1.checkValidity("2025-08-19")
+
+
+

@@ -1,0 +1,103 @@
+Q.1----Heltcare Dignosis Engine----
+
+INTERFACE DiagnosisStrategy
+    METHOD diagnose(symptoms: List<String>) RETURNS List<String>
+
+CLASS RuleBasedDiagnosis IMPLEMENTS DiagnosisStrategy
+    METHOD diagnose(symptoms)
+        IF symptoms CONTAINS ["fever", "cough", "fatigue"]
+            RETURN ["Flu", "COVID-19"]
+        ELSE RETURN ["Unknown"]
+
+CLASS AIBasedDiagnosis IMPLEMENTS DiagnosisStrategy
+    METHOD diagnose(symptoms)
+        // Assume some ML model logic
+        IF symptoms CONTAINS ["headache", "dizziness", "nausea"]
+            RETURN ["Migraine", "Vertigo"]
+        ELSE RETURN ["Unknown"]
+
+CLASS ProbabilityBasedDiagnosis IMPLEMENTS DiagnosisStrategy
+    METHOD diagnose(symptoms)
+        RETURN ["Disease A (60%)", "Disease B (40%)"]
+
+CLASS DiagnosisContext
+    ATTRIBUTE strategy: DiagnosisStrategy
+    METHOD setStrategy(strategy)
+        this.strategy = strategy
+    METHOD runDiagnosis(symptoms)
+        RETURN strategy.diagnose(symptoms)
+
+MAIN:
+    context = new DiagnosisContext()
+
+    patient1Symptoms = ["fever", "cough", "fatigue"]
+    context.setStrategy(new RuleBasedDiagnosis())
+    PRINT context.runDiagnosis(patient1Symptoms)
+
+    patient2Symptoms = ["headache", "dizziness", "nausea"]
+    context.setStrategy(new AIBasedDiagnosis())
+    PRINT context.runDiagnosis(patient2Symptoms)
+
+    // Tomorrow: Add GeneticPatternDiagnosis without touching old code
+    CLASS GeneticPatternDiagnosis IMPLEMENTS DiagnosisStrategy
+        METHOD diagnose(symptoms)
+            RETURN ["Genetic Disorder X"]
+
+--------------------------------------------------------------------------------------------------
+
+Q.2----Restaurant POS Billing System---------
+
+INTERFACE TaxCalculator
+    METHOD calculateTax(itemPrice) RETURNS double
+
+CLASS FoodTax IMPLEMENTS TaxCalculator
+    METHOD calculateTax(price)
+        RETURN price * 0.05
+
+CLASS BeverageTax IMPLEMENTS TaxCalculator
+    METHOD calculateTax(price)
+        RETURN price * 0.12
+
+CLASS ImportedTax IMPLEMENTS TaxCalculator
+    METHOD calculateTax(price)
+        RETURN price * 0.05 + 100   // customs duty
+
+INTERFACE DiscountPolicy
+    METHOD applyDiscount(totalPrice) RETURNS double
+
+CLASS NoDiscount IMPLEMENTS DiscountPolicy
+    METHOD applyDiscount(totalPrice)
+        RETURN totalPrice
+
+CLASS FlatDiscount IMPLEMENTS DiscountPolicy
+    METHOD applyDiscount(totalPrice)
+        RETURN totalPrice - 100
+
+CLASS PercentageDiscount IMPLEMENTS DiscountPolicy
+    METHOD applyDiscount(totalPrice)
+        RETURN totalPrice * 0.9   // 10% off
+
+CLASS Item
+    ATTRIBUTES: name, basePrice, TaxCalculator tax
+    METHOD getFinalPrice()
+        RETURN basePrice + tax.calculateTax(basePrice)
+
+CLASS Bill
+    ATTRIBUTES: List<Item> items, DiscountPolicy discount
+    METHOD calculateBill()
+        subtotal = 0
+        FOR item IN items
+            subtotal += item.getFinalPrice()
+        finalBill = discount.applyDiscount(subtotal)
+        RETURN finalBill
+
+MAIN:
+    items = [
+        new Item("Paneer Tikka", 200, new FoodTax()),
+        new Item("Coke", 100, new BeverageTax()),
+        new Item("Imported Cheese", 500, new ImportedTax())
+    ]
+    bill = new Bill(items, new PercentageDiscount())
+    PRINT bill.calculateBill()
+
+    // Tomorrow → add BuyOneGetOneDiscount without changing core billing code

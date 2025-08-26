@@ -1,0 +1,76 @@
+Q.1----Distrubutd Load Balancer--------
+
+QUEUE servers
+
+METHOD addServer(serverId)
+    ENQUEUE serverId INTO servers
+
+METHOD removeServer(serverId)
+    TEMP = new Queue
+    WHILE servers NOT EMPTY
+        s = DEQUEUE servers
+        IF s != serverId
+            ENQUEUE s INTO TEMP
+    servers = TEMP
+
+METHOD assignRequest(requestId)
+    server = DEQUEUE servers
+    PRINT "Request " + requestId + " → " + server
+    ENQUEUE server INTO servers
+
+MAIN:
+    addServer(S1), addServer(S2), addServer(S3)
+    assignRequest(R1) → S1
+    assignRequest(R2) → S2
+    assignRequest(R3) → S3
+
+    addServer(S4)
+    assignRequest(R4) → S1
+
+    removeServer(S2)
+    assignRequest(R5) → S3
+
+----------------------------------------------------------------------------------------------
+
+Q.2----AutoComplete serchSuggestion-------
+CLASS TrieNode
+    ATTRIBUTES: children<Map<char, TrieNode>>, isEndOfWord, popularity, word
+
+CLASS Trie
+    root = new TrieNode()
+
+    METHOD insert(keyword, popularity)
+        node = root
+        FOR char IN keyword
+            IF char NOT IN node.children
+                node.children[char] = new TrieNode()
+            node = node.children[char]
+        node.isEndOfWord = TRUE
+        node.word = keyword
+        node.popularity = popularity
+
+    METHOD search(prefix, N)
+        node = root
+        FOR char IN prefix
+            IF char NOT IN node.children
+                RETURN []
+            node = node.children[char]
+        suggestions = DFSCollect(node)
+        SORT suggestions BY popularity DESC
+        RETURN top N suggestions
+
+    METHOD DFSCollect(node)
+        results = []
+        IF node.isEndOfWord
+            results.add((node.word, node.popularity))
+        FOR child IN node.children
+            results += DFSCollect(child)
+        RETURN results
+
+MAIN:
+    trie.insert("pizza hut", 80)
+    trie.insert("pizza point", 60)
+    trie.insert("pita bread", 70)
+    trie.insert("pizzeria", 50)
+
+    PRINT trie.search("pi", 3)   // Suggest top 3

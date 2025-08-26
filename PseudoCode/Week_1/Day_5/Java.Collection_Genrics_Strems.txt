@@ -1,0 +1,28 @@
+Q.1----Smart Grid Energy Usage-----
+
+MAP<Zone, MAP<Day, List<Reading>>> energyData
+
+METHOD findPeakUsage(energyData)
+    FOR EACH (zone, dayMap) IN energyData
+        FOR EACH (day, readings) IN dayMap
+            peak = MAX(readings)
+            PRINT "Zone " + zone + " Day " + day + " Peak: " + peak
+
+------------------------------------------------------------------------------------------------------
+
+Q.2----Employee Bonous Distrubution System-----
+
+CLASS Employee
+    ATTRIBUTES: name, department, rating, salary
+
+METHOD calculateBonus(employees)
+    GROUP employees BY department
+
+    FOR EACH departmentGroup
+        totalSalary = SUM(emp.salary)
+        bonusPool = totalSalary * 0.10
+        totalRating = SUM(emp.rating)
+
+        FOR emp IN departmentGroup
+            share = (emp.rating / totalRating) * bonusPool
+            PRINT emp.name + " gets " + share

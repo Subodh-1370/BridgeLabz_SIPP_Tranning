@@ -1,0 +1,45 @@
+Q.1---- Banking Protal------
+
+CLASS Account
+    ATTRIBUTES: accountNumber, balance
+    METHOD withdraw(amount)
+        PRINT "Base withdrawal not defined"
+
+CLASS SavingAccount EXTENDS Account
+    METHOD withdraw(amount)
+        IF balance - amount >= 500 THEN
+            balance = balance - amount
+            PRINT "Withdrawal successful"
+        ELSE
+            PRINT "Cannot withdraw, min balance 500 required"
+
+CLASS CurrentAccount EXTENDS Account
+    METHOD withdraw(amount)
+        IF balance - amount >= 0 THEN
+            balance = balance - amount
+            PRINT "Withdrawal successful"
+        ELSE
+            PRINT "Overdraft not allowed"
+
+--------------------------------------------------------------------------------------------
+
+Q.2----Vechicle Rental System---------
+
+INTERFACE Rentable
+    METHOD rent(duration)
+
+ABSTRACT CLASS Vehicle IMPLEMENTS Rentable
+    ATTRIBUTES: vehicleId, brand, rentalPrice
+
+CLASS Car EXTENDS Vehicle
+    METHOD rent(duration)
+        PRINT "Car rented for " + duration + " days"
+
+CLASS Bike EXTENDS Vehicle
+    METHOD rent(duration)
+        PRINT "Bike rented for " + duration + " days"
+
+CLASS VehicleFactory
+    METHOD createVehicle(type)
+        IF type == "CAR" RETURN new Car()
+        IF type == "BIKE" RETURN new Bike()

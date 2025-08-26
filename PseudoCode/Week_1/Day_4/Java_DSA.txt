@@ -1,0 +1,38 @@
+Q.1----Flight Price Analyzer-------
+
+CLASS Flight
+    ATTRIBUTES: flightNumber, price, duration
+
+FUNCTION mergeSort(flightList, comparator)
+    IF size <= 1 RETURN flightList
+    SPLIT into left, right
+    leftSorted = mergeSort(left, comparator)
+    rightSorted = mergeSort(right, comparator)
+    RETURN merge(leftSorted, rightSorted, comparator)
+
+FUNCTION comparator(f1, f2)
+    IF f1.price < f2.price RETURN -1
+    ELSE IF f1.price == f2.price
+        RETURN f1.duration - f2.duration
+    ELSE RETURN 1
+
+----------------------------------------------------------------------------------
+
+Q.2----Crime Preduction Heatmap-----
+
+CLASS Graph
+    ATTRIBUTES: adjacencyList<Zone, List<Zone>>, crimeData<Zone, int>
+
+METHOD DFS(zone, visited)
+    visited.add(zone)
+    riskScore = crimeData[zone]
+    FOR neighbor IN adjacencyList[zone]
+        IF neighbor NOT IN visited
+            riskScore += DFS(neighbor, visited)
+    RETURN riskScore
+
+MAIN:
+    Create Graph of city zones
+    FOR each zone
+        risk = DFS(zone, emptyVisitedSet)
+        PRINT zone + " risk score: " + risk

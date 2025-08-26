@@ -1,0 +1,32 @@
+Q.1-----Collage Course Registrartion-------
+
+MAP<Course, List<Student>> courseMap
+
+METHOD registerStudent(course, student)
+    IF course NOT IN courseMap
+        courseMap[course] = new List<Student>()
+    courseMap[course].add(student)
+
+METHOD displayStudents(course)
+    FOR student IN courseMap[course]
+        PRINT student.name
+
+-----------------------------------------------------------------------------------------
+
+Q.2----Digital Wallet Transation Report-----
+
+CLASS Transaction
+    ATTRIBUTES: merchant, amount, date
+
+LIST<Transaction> transactions
+
+// Group by merchant and month
+METHOD generateReport(transactions)
+    GROUPED = transactions.stream()
+        .collect(
+            groupingBy(transaction -> (transaction.merchant, month(transaction.date)),
+                       summing(transaction.amount))
+        )
+
+    FOR EACH group IN GROUPED
+        PRINT group.key.merchant + " - " + group.key.month + ": " + group.value

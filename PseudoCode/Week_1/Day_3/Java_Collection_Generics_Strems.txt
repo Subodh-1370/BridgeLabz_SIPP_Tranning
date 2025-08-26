@@ -1,0 +1,51 @@
+Q.1-----Library Book Filter-------
+
+CLASS Book:
+    ATTRIBUTE title, year, rating
+    CONSTRUCTOR(title, year, rating)
+
+MAIN:
+    CREATE List<Book> books
+    ADD Book("Java Basics", 2010, 4.0)
+    ADD Book("Advanced Java", 2018, 4.7)
+    ADD Book("Spring Boot", 2021, 4.8)
+
+    FILTER result = books.stream()
+                         .filter(book.year > 2015 AND book.rating > 4.5)
+                         .collect()
+
+    FOR book IN result:
+        PRINT book.title, book.year, book.rating
+
+-------------------------------------------------------------------------------------------------------
+
+Q.2----Payment Processor---------
+
+CLASS Transaction<T>:
+    ATTRIBUTE transactionId
+    ATTRIBUTE method (type T)
+    ATTRIBUTE amount
+
+    CONSTRUCTOR(transactionId, method, amount)
+
+    METHOD process():
+        PRINT "Processing:", method, "Amount:", amount
+
+CLASS UPI:
+    ATTRIBUTE upiId
+
+CLASS Card:
+    ATTRIBUTE cardNumber
+
+CLASS NetBanking:
+    ATTRIBUTE bankName
+
+MAIN:
+    CREATE Transaction<UPI> t1 = NEW Transaction("T101", NEW UPI("alice@upi"), 500)
+    CALL t1.process()
+
+    CREATE Transaction<Card> t2 = NEW Transaction("T102", NEW Card("1234-5678-9999"), 2000)
+    CALL t2.process()
+
+    CREATE Transaction<NetBanking> t3 = NEW Transaction("T103", NEW NetBanking("HDFC"), 1500)
+    CALL t3.process()

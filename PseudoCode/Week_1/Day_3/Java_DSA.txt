@@ -1,0 +1,59 @@
+Q.1-----Paitent Record Hashing------
+
+CLASS Patient:
+    ATTRIBUTE id, name, age, disease
+    CONSTRUCTOR(id, name, age, disease)
+
+MAIN:
+    CREATE HashMap patients
+
+    // Insert
+    patients[101] = NEW Patient(101, "Alice", 30, "Fever")
+    patients[102] = NEW Patient(102, "Bob", 45, "Diabetes")
+
+    // Retrieve
+    patient = patients[101]
+    PRINT "Patient Found:", patient.name, patient.disease
+
+    // Update
+    patients[102].disease = "Recovered"
+
+    // Delete
+    REMOVE patients[101]
+
+    // Display All
+    FOR each entry IN patients:
+        PRINT entry.key, entry.value.name, entry.value.disease
+
+---------------------------------------------------------------------------------------------------
+
+Q.2----Maze solver Bot------
+
+FUNCTION solveMaze(maze, x, y, solution):
+    IF (x,y) is destination:
+        solution[x][y] = 1
+        RETURN true
+
+    IF (x,y) is safe (within bounds AND maze[x][y]==0):
+        solution[x][y] = 1
+        // move right
+        IF solveMaze(maze, x+1, y, solution):
+            RETURN true
+        // move down
+        IF solveMaze(maze, x, y+1, solution):
+            RETURN true
+        // backtrack
+        solution[x][y] = 0
+        RETURN false
+
+MAIN:
+    maze = [[0,0,1,0],
+            [0,0,0,1],
+            [1,0,1,0],
+            [0,0,0,0]]
+
+    solution = same size as maze, initialized to 0
+    IF solveMaze(maze, 0, 0, solution):
+        PRINT solution
+    ELSE:
+        PRINT "No Path Found"

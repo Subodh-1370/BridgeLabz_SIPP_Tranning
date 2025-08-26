@@ -1,0 +1,72 @@
+Q.1-----Food Dilevery System-------
+
+CLASS Customer:
+    ATTRIBUTE name, address
+    CONSTRUCTOR(name, address)
+
+CLASS Restaurant:
+    ATTRIBUTE name, location
+    CONSTRUCTOR(name, location)
+
+CLASS DeliveryBoy:
+    ATTRIBUTE name, phone
+    CONSTRUCTOR(name, phone)
+
+CLASS Order:
+    ATTRIBUTE customer
+    ATTRIBUTE restaurant
+    ATTRIBUTE deliveryBoy
+    ATTRIBUTE foodItem
+
+    CONSTRUCTOR(customer, restaurant, deliveryBoy, foodItem)
+        SET this.customer = customer
+        SET this.restaurant = restaurant
+        SET this.deliveryBoy = deliveryBoy
+        SET this.foodItem = foodItem
+
+    METHOD displayOrder():
+        PRINT "Order Details:"
+        PRINT "Customer:", customer.name, "Address:", customer.address
+        PRINT "Restaurant:", restaurant.name
+        PRINT "Delivery By:", deliveryBoy.name
+        PRINT "Food Item:", foodItem
+
+MAIN:
+    CREATE Customer c = NEW Customer("Alice", "123 Street")
+    CREATE Restaurant r = NEW Restaurant("Pizza Hut", "Downtown")
+    CREATE DeliveryBoy d = NEW DeliveryBoy("John", "9876543210")
+    CREATE Order o = NEW Order(c, r, d, "Cheese Pizza")
+    CALL o.displayOrder()
+
+----------------------------------------------------------------------------------------------------
+
+Q.2-----Medical Record manager-----
+
+INTERFACE Searchable:
+    METHOD search(keyword)
+
+INTERFACE Printable:
+    METHOD printReport()
+
+CLASS LabReport IMPLEMENTS Searchable, Printable:
+    ATTRIBUTE reportId, details
+    METHOD search(keyword):
+        RETURN keyword IN details
+    METHOD printReport():
+        PRINT "Lab Report:", reportId, details
+
+CLASS Prescription IMPLEMENTS Searchable, Printable:
+    ATTRIBUTE prescriptionId, medicines
+    METHOD search(keyword):
+        RETURN keyword IN medicines
+    METHOD printReport():
+        PRINT "Prescription:", prescriptionId, medicines
+
+MAIN:
+    CREATE Searchable s1 = NEW LabReport("L101", "Blood Test Normal")
+    CREATE Searchable s2 = NEW Prescription("P202", "Paracetamol, Antibiotic")
+
+    IF s1.search("Blood"):
+        CALL (CAST TO Printable) s1.printReport()
+    IF s2.search("Paracetamol"):
+        CALL (CAST TO Printable) s2.printReport()

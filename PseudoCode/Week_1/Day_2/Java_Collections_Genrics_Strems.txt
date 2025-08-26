@@ -1,0 +1,49 @@
+Q.1-----Online Store Cart System--------
+
+CLASS Item:
+    ATTRIBUTE name
+    ATTRIBUTE price
+    ATTRIBUTE quantity
+
+    CONSTRUCTOR(name, price, quantity):
+        SET this.name = name
+        SET this.price = price
+        SET this.quantity = quantity
+
+GENERIC METHOD calculateTotal(List<Item> cart):
+    total = 0
+    FOR each item IN cart:
+        total += item.price * item.quantity
+    RETURN total
+
+MAIN:
+    CREATE cart = []
+    ADD Item("Laptop", 50000, 1) TO cart
+    ADD Item("Mouse", 1000, 2) TO cart
+    total = calculateTotal(cart)
+    PRINT "Total Price:", total
+
+-------------------------------------------------------------------------------------
+
+Q.2----Hospital Dipartment Mapper------
+
+CLASS Doctor:
+    ATTRIBUTE name
+    ATTRIBUTE specialization
+
+    CONSTRUCTOR(name, specialization):
+        SET this.name = name
+        SET this.specialization = specialization
+
+MAIN:
+    CREATE Map<String, List<Doctor>> hospital = {}
+
+    ADD Doctor("Dr. A", "Cardiology") TO hospital["Cardiology"]
+    ADD Doctor("Dr. B", "Neurology") TO hospital["Neurology"]
+    ADD Doctor("Dr. C", "Cardiology") TO hospital["Cardiology"]
+
+    PRINT "All Departments:", hospital.keys
+
+    FILTER cardiologyDoctors = hospital["Cardiology"]
+    FOR doctor IN cardiologyDoctors:
+        PRINT "Cardiology Doctor:", doctor.name

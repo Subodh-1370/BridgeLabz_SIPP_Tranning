@@ -1,0 +1,63 @@
+Q.1-----Traffic signal simulation---------
+
+ENUM TrafficLight:
+    RED, YELLOW, GREEN
+
+CLASS SignalController:
+    ATTRIBUTE currentLight
+
+    CONSTRUCTOR():
+        SET currentLight = RED
+
+    METHOD switchLight():
+        IF currentLight == RED:
+            currentLight = GREEN
+        ELSE IF currentLight == GREEN:
+            currentLight = YELLOW
+        ELSE:
+            currentLight = RED
+
+    METHOD display():
+        PRINT "Current Light:", currentLight
+
+MAIN:
+    CREATE controller = NEW SignalController()
+    LOOP 5 times:
+        controller.display()
+        WAIT 5 seconds
+        controller.switchLight()
+
+-----------------------------------------------------------------------------------------
+
+Q.2-----Smart Farming System---------
+
+ABSTRACT CLASS Crop:
+    ATTRIBUTE name
+    CONSTRUCTOR(name)
+    ABSTRACT METHOD waterRequirement()
+    ABSTRACT METHOD harvest()
+
+CLASS Rice EXTENDS Crop:
+    CONSTRUCTOR(name)
+        CALL super(name)
+    METHOD waterRequirement():
+        PRINT "Rice needs 500L water per acre"
+    METHOD harvest():
+        PRINT "Rice harvested in 120 days"
+
+CLASS Wheat EXTENDS Crop:
+    CONSTRUCTOR(name)
+        CALL super(name)
+    METHOD waterRequirement():
+        PRINT "Wheat needs 300L water per acre"
+    METHOD harvest():
+        PRINT "Wheat harvested in 90 days"
+
+MAIN:
+    CREATE Crop c1 = NEW Rice("Paddy Rice")
+    CALL c1.waterRequirement()
+    CALL c1.harvest()
+
+    CREATE Crop c2 = NEW Wheat("Winter Wheat")
+    CALL c2.waterRequirement()
+    CALL c2.harvest()

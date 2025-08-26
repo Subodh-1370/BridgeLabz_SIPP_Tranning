@@ -1,0 +1,37 @@
+Q.1-----Student Score Storage-----
+
+CLASS StudentScores
+    METHOD main()
+        scores = HashMap<String, Integer>()
+        scores.put("Alice", 85)
+        scores.put("Bob", 92)
+        scores.put("Charlie", 78)
+
+        // Find highest scorer using streams
+        top = scores.entrySet().stream()
+                     .max(by value)
+                     .get()
+
+        PRINT "Top Scorer: " + top.key + " -> " + top.value
+
+--------------------------------------------------------------------------------------------------
+
+Q.2-----Employee Record Keeper------
+
+CLASS Employee
+    ATTR name, dept
+    CONSTRUCTOR(name, dept)
+
+CLASS EmployeeFilter
+    METHOD main()
+        employees = ArrayList<Employee>()
+        employees.add(new Employee("John", "IT"))
+        employees.add(new Employee("Mary", "HR"))
+        employees.add(new Employee("Raj", "IT"))
+
+        // Filter by department = "IT"
+        itEmployees = employees.stream()
+                               .filter(emp -> emp.dept == "IT")
+                               .collect(toList)
+
+        PRINT itEmployees

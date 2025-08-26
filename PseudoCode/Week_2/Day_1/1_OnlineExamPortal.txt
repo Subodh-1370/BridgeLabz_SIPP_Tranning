@@ -1,0 +1,21 @@
+Java OOPs - Online Exam Portal
+
+Class User
+    Attributes: username, password
+    Method: login()
+
+Class Student extends User
+    Attribute: enrolledCourse
+    Method: login()
+        If username & password valid AND enrolledCourse not null
+            Print "Student login successful → Show available exams"
+        Else
+            Print "Login failed → Not registered or not enrolled"
+
+Class Admin extends User
+    Attribute: adminPrivileges
+    Method: login()
+        If username & password valid AND adminPrivileges true
+            Print "Admin login successful → Show exam management tools"
+        Else
+            Print "Login failed → Invalid staff credentials"

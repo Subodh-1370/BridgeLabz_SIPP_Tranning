@@ -1,0 +1,19 @@
+DSA - Bus Route Navigator (Day 2)
+
+Class Node
+    Attributes: stopName, next
+
+Class BusRoute
+    Attribute: head
+
+    Method: addStop(afterStop, newStop)
+        Traverse until afterStop
+        Insert new Node(newStop)
+
+    Method: removeStop(stopName)
+        Find node and remove it
+
+    Method: searchStop(stopName)
+        Traverse
+        If found → Print "Stop exists"
+        Else → Print "Not found"

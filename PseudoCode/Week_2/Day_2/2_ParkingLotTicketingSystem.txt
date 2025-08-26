@@ -1,0 +1,28 @@
+Java OOPs - Parking Lot Ticketing System
+
+Class Vehicle
+    Attributes: vehicleNumber, entryTime
+    Method: calculateFee(exitTime)
+
+Class Car extends Vehicle
+    Method: calculateFee(exitTime)
+        Duration = exitTime - entryTime
+        Fee = 50 + (DurationHours - 1) * 30
+        Return Fee
+
+Class Bike extends Vehicle
+    Method: calculateFee(exitTime)
+        Duration = exitTime - entryTime
+        Fee = 20 + (DurationHours - 1) * 10
+        Return Fee
+
+Class Truck extends Vehicle
+    Method: calculateFee(exitTime)
+        Duration = exitTime - entryTime
+        Fee = 100 + (DurationHours - 1) * 50
+        Return Fee
+
+Process:
+    When vehicle enters → Create object(Car/Bike/Truck)
+    When exits → Call calculateFee()
+    Print ticket details

@@ -1,0 +1,18 @@
+DSA - Attendance Marker (Day 2)
+
+Class AttendanceTracker
+    Attribute: attendance[students][days]
+
+    Method: markAttendance(studentId, day, status)
+        attendance[studentId][day] = status
+
+    Method: dailySummary(day)
+        Count all '1' in column[day]
+
+    Method: monthlySummary(studentId)
+        Count all '1' in row[studentId]
+
+    Method: defaulterList()
+        For each student
+            If totalDaysPresent < 75%
+                Print studentId

@@ -1,0 +1,9 @@
+Collections - Simple Word Counter (Day 2)
+
+Class WordCounter
+    Method: countWords(paragraph)
+        Normalize text (lowercase, remove punctuation)
+        Split into words
+        Use Map<String,Integer> to count
+        Sort by frequency
+        Print words with count

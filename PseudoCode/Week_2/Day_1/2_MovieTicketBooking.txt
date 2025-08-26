@@ -1,0 +1,26 @@
+Java OOPs - Movie Ticket Booking
+
+Class Ticket
+    Attributes: movieName, seatNumber, price, bookingStatus
+    Methods: bookTicket(), cancelTicket()
+
+Class Theatre
+    Attributes: movieSchedule, availableSeats, issuedTickets
+    Methods:
+        issueTicket(customer, movie, seat)
+            If seat available
+                Create new Ticket
+                Update seat availability
+                Return Ticket
+            Else
+                Print "Seat not available"
+        cancelTicket(ticket)
+            Update seat availability
+            Mark ticket as cancelled
+
+Class Customer
+    Attributes: name, bookedTickets
+    Methods:
+        browseMovies(theatre)
+        bookTicket(theatre, movie, seat)
+        cancelTicket(theatre, ticket)

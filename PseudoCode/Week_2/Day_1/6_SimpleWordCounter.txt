@@ -1,0 +1,11 @@
+Collections - Simple Word Counter
+
+Class WordCounter
+    Method: countWords(paragraph)
+        Normalize → lowercase
+        Remove punctuation
+        Split into words
+        For each word
+            Increment count in Map<String, Integer>
+        Sort by frequency
+        Print word → count

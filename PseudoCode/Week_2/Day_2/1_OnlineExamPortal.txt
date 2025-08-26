@@ -1,0 +1,21 @@
+Java OOPs - Online Exam Portal (Day 2)
+
+Class User
+    Attributes: username, password
+    Method: login()
+
+Class Student extends User
+    Attribute: enrolledCourse
+    Method: login()
+        If credentials valid AND enrolledCourse not null
+            Print "Student login success → Show exams"
+        Else
+            Print "Login failed"
+
+Class Admin extends User
+    Attribute: adminPrivileges
+    Method: login()
+        If credentials valid AND adminPrivileges true
+            Print "Admin login success → Show management tools"
+        Else
+            Print "Login failed"

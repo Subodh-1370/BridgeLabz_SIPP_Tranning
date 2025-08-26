@@ -1,0 +1,14 @@
+DSA - Attendance Marker
+
+Class AttendanceTracker
+    Attribute: attendance[students][days]
+
+    Method: markAttendance(studentId, day, status)
+        attendance[studentId][day] = status
+
+    Method: updateAttendance(studentId, day, newStatus)
+        attendance[studentId][day] = newStatus
+
+    Method: generateReport(studentId)
+        Count 'P' in attendance[studentId][*]
+        Print "Student present X days"

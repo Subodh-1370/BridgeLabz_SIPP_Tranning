@@ -1,0 +1,16 @@
+Collections - Daily Tasks Organizer
+
+Class TaskOrganizer
+    Attribute: LinkedHashMap<Integer, String> tasks
+    Attribute: taskIdCounter
+
+    Method: addTask(description)
+        taskIdCounter++
+        tasks.put(taskIdCounter, description)
+
+    Method: removeTask(taskId)
+        tasks.remove(taskId)
+
+    Method: viewTasks()
+        For each (id, task) in tasks
+            Print id → task

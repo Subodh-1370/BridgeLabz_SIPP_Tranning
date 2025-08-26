@@ -1,0 +1,11 @@
+Collections - Online Survey Report Generator (Day 2)
+
+Class SurveyResponse
+    Attributes: restaurantName, rating
+
+Class SurveyReport
+    Method: generateReport(responses)
+        Group by restaurantName
+        Average rating per restaurant
+        Find highest & lowest rated
+        Print results
